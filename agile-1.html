@@ -1,0 +1,88 @@
+<html>
+<body>
+<form>
+	First Name: <input type="text" id="First Name" required><br><br>
+	Last Name: <input type="text" id="Last Name" ><br><br>
+	Email address: <input type="email" id="Email"><br><br>
+	Password: <input type="password" id="pwd"><br><br>
+	Gender:<br><br>
+		<input type="radio" name="gender" value="Male">Male<br>
+		<input type="radio" name="gender" value="Female">Female<br>
+	Paramenant Address:<br><br>
+		Detailed Address<input type="address" id="b1" onkeyup="Enable()"><br><br>
+		Area Name<input type="text" id="b2"  disabled onkeyup="Enable1()"><br><br>
+		Pincode<input type="text" id="b3"  disabled><br><br>
+		<input type="checkbox" name="a1" values="box1" onclick="ena1()" > Same as paramenant Address<br><br>
+		Detailed Address<input type="address" id="e1" onkeyup="ena2()"><br><br>
+		Area Name<input type="text" id="e2"  disabled onkeyup="ena3()"><br><br>
+		Pincode<input type="text" id="e3"  disabled><br><br>
+	<input type="file"><br	><br>
+	<input type="checkbox" name="agree" value="box" onclick="fun()" >Agree all the teams and conditions<br><br>
+	<input type="button" id="button" value="submit" disabled  ><br><br>
+</form>
+<script>
+	function Enable()
+	{
+		document.getElementById("b2").disabled=false;
+	}
+	function Enable1()
+	{
+		document.getElementById("b3").disabled=false;
+	}	
+	function fun()
+	{
+		var box=document.getElementsByName("agree");
+		if(box[0].checked)
+		{
+			document.getElementById("button").disabled=false;
+		}
+		else
+		{
+			document.getElementById("button").disabled=true;
+		}
+	}
+	function ena2()
+	{
+		document.getElementById("e2").disabled=false;
+	}
+	function ena3()
+	{
+		document.getElementById("e3").disabled=false; 
+	}
+	function ena1()
+	{
+	var box2=document.getElementsByName("a1");
+	if (box2[0].checked)
+	{		
+		document.getElementById("e1").value=document.getElementById("b1").value;
+		document.getElementById("e2").value=document.getElementById("b2").value;
+		document.getElementById("e3").value=document.getElementById("b3").value;
+		document.getElementById("e1").disabled=true;'
+		document.getElementById("e2").disabled=true;
+		document.getElementById("e3").disabled=true;
+	}
+	else
+	{
+		document.getElementById("e1").value=" ";
+		document.getElementById("e2").value=" ";
+		document.getElementById("e3").value=" ";
+		document.getElementById("e1").disabled=false;
+		document.getElementById("e2").disabled=true;
+		document.getElementById("e3").disabled=true;
+	}
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
